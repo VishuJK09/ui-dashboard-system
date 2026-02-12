@@ -1,8 +1,13 @@
+import Button from "./components/ui/button";
+
 function App() {
     return (
-        <div>
+        <div style={{ padding: "40px" }}>
             <h1>UI Dashboard System</h1>
-            <p>Building a scalable component-driven dashboard application.</p>
+
+            <Button>Primary Button</Button>
+            <Button variant="secondary">Secondary Button</Button>
+            <Button disabled>Disabled Button</Button>
         </div>
     )
 }
