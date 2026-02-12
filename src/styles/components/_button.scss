@@ -28,4 +28,5 @@
     opacity: 0.6;
     cursor: not-allowed;
   }
+  &+.btn { margin-left: 8px; }
 }
