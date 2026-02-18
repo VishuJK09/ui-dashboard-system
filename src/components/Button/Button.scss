@@ -1,4 +1,5 @@
 @use "../../styles/tokens/index.scss" as *;
+@use "sass:color";
 
 .btn {
   padding: 10px 16px;
@@ -12,26 +13,41 @@
   &--primary {
     background-color: $color-primary;
     color: white;
+    &:hover {
+      background-color: $color-primary-hover;
+    }
   }
   
   &--secondary {
     background-color: $color-secondary;
     color: $color-secondary-text;
+    &:hover {
+      background-color: color.adjust($color-secondary, $lightness: -5%);
+    }
   }
 
   &--danger {
     background-color: $color-danger;
     color: white;
+    &:hover {
+      background-color: color.adjust($color-danger, $lightness: -5%);
+    }
   }
 
   &--success {
     background-color: $color-success;
     color: white;
+    &:hover {
+      background-color: color.adjust($color-success, $lightness: -5%);
+    }
   }
 
   &--warning {
-    background-color: $color-neutral-900;
+    background-color: $color-warning;
     color: white;
+    &:hover {
+      background-color: color.adjust($color-warning, $lightness: -5%);
+    }
   }
 
   &--outline {
@@ -44,12 +60,18 @@
     background-color: transparent;
     border: 1px solid $outline-color;
     color: $outline-primary-text;
+    &:hover {
+      background-color: $outline-primary-hover-color;
+    }
   }
 
   &--outline-secondary {
     background-color: transparent;
     border: 1px solid $outline-secondary-color;
     color: $outline-secondary-text;
+    &:hover {
+      background-color: $outline-secondary-hover-color;
+    }
   }
 
   &--link {

@@ -7,13 +7,17 @@ $color-secondary-text: #666666;
 $color-neutral-100: #f3f4f6;
 $color-neutral-900: #111827;
 
-$color-danger: #dc2626;
-$color-success: #16a34a;
+$color-success: #0EBC6B;
+$color-danger: #EC5158;
+$color-warning: #F1A82F;
 
 $color-white: #ffffff;
 $color-black: #000000;
 
+
 $outline-color: $color-primary;
+$outline-primary-hover-color: rgb(101 139 255 / 8%);
 $outline-primary-text: $color-primary;
 $outline-secondary-color: $color-secondary;
+$outline-secondary-hover-color: rgb(222 225 230 / 18%);
 $outline-secondary-text: $color-secondary-text;
