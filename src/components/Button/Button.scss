@@ -1,0 +1,88 @@
+@use "../../styles/tokens/index.scss" as *;
+
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  font-weight: 500;
+  &+.btn {
+    margin-left: 12px;
+  }
+  &--primary {
+    background-color: $color-primary;
+    color: white;
+  }
+  
+  &--secondary {
+    background-color: $color-secondary;
+    color: $color-secondary-text;
+  }
+
+  &--danger {
+    background-color: $color-danger;
+    color: white;
+  }
+
+  &--success {
+    background-color: $color-success;
+    color: white;
+  }
+
+  &--warning {
+    background-color: $color-neutral-900;
+    color: white;
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+  }
+
+  &--outline-primary {
+    background-color: transparent;
+    border: 1px solid $outline-color;
+    color: $outline-primary-text;
+  }
+
+  &--outline-secondary {
+    background-color: transparent;
+    border: 1px solid $outline-secondary-color;
+    color: $outline-secondary-text;
+  }
+
+  &--link {
+    background-color: transparent;
+    color: $color-primary;
+    padding: 0;
+  }
+
+  &--disabled {
+    background-color: $color-neutral-100;
+    color: $color-neutral-900;
+    cursor: not-allowed;
+  }
+  
+  &--sm {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  &--md {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  
+  &--lg {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+
