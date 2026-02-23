@@ -20,7 +20,7 @@ const ToggleShowcase: React.FC = () => {
 
   return (
     <Layout>
-      <div style={{ padding: "32px", maxWidth: "900px" }}>
+      <div>
         <h2>Toggle Component Showcase</h2>
 
         {/* Basic Toggle */}

@@ -1,0 +1,24 @@
+@use "../styles/tokens/index.scss" as *;
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+
+  .app-content {
+    flex: 1;
+    margin-left: 250px;
+    overflow-y: auto;
+    padding: $space-5;
+    background-color: $color-white;
+
+    @media (max-width: 768px) {
+      margin-left: 200px;
+      padding: $space-4;
+    }
+
+    @media (max-width: 480px) {
+      margin-left: 0;
+    }
+  }
+}
