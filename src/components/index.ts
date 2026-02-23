@@ -5,3 +5,5 @@ export { default as Checkbox } from "./Checkbox";
 export { default as Card } from "./Card";
 export { default as Toggle } from "./Toggle";
 export { default as Sidebar } from "./Sidebar";
+export { default as TopNav } from "./TopNav";
+export { default as SecondaryNav } from "./SecondaryNav";

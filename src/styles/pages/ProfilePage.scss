@@ -1,0 +1,131 @@
+@use "../tokens/index.scss" as *;
+
+.profile-page {
+  padding: $space-5;
+  background-color: $color-white;
+  min-height: 100%;
+
+  .profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .profile-header {
+    display: flex;
+    gap: $space-5;
+    align-items: flex-start;
+    padding: $space-5;
+    background-color: $color-neutral-100;
+    border-radius: $radius-lg;
+    margin-bottom: $space-5;
+
+    .profile-avatar {
+      flex-shrink: 0;
+
+      .avatar-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid $color-primary;
+      }
+    }
+
+    .profile-info {
+      flex: 1;
+      padding-top: $space-2;
+
+      .profile-name {
+        margin: 0 0 $space-2 0;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: $color-neutral-900;
+      }
+
+      .profile-email {
+        margin: 0 0 $space-1 0;
+        font-size: 0.9375rem;
+        color: $color-secondary-text;
+      }
+
+      .profile-role {
+        margin: 0;
+        font-size: 1rem;
+        color: $color-primary;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: $space-5;
+
+    .profile-section {
+      padding: $space-4;
+      background-color: $color-neutral-100;
+      border-radius: $radius-lg;
+
+      h2 {
+        margin: 0 0 $space-3 0;
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: $color-neutral-900;
+      }
+
+      p {
+        margin: 0;
+        color: $color-secondary-text;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-2;
+
+    .skill-badge {
+      display: inline-block;
+      padding: $space-2 $space-3;
+      background-color: $color-primary;
+      color: $color-white;
+      border-radius: $radius-xlg;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: $space-3;
+
+    .contact-item {
+      display: flex;
+      gap: $space-3;
+      align-items: center;
+
+      .contact-label {
+        min-width: 100px;
+        font-weight: 600;
+        color: $color-neutral-900;
+      }
+
+      .contact-value {
+        color: $color-secondary-text;
+
+        a {
+          color: $color-primary;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

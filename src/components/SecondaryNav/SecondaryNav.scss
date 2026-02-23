@@ -1,0 +1,43 @@
+@use "../../styles/tokens/index.scss" as *;
+
+.secondary-nav {
+  border-bottom: 1px solid $color-secondary;
+  background-color: $color-neutral-100;
+  padding: 0 $space-5;
+
+  .secondary-nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0;
+
+    li {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .secondary-nav-link {
+    color: $color-neutral-900;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    padding: $space-4;
+    border-radius: 0;
+    transition: all 0.2s ease;
+    display: inline-block;
+    position: relative;
+    border-bottom: 3px solid transparent;
+
+    &:hover {
+      color: $color-primary;
+      background-color: rgba(37, 99, 235, 0.05);
+    }
+
+    &.active {
+      color: $color-primary;
+      border-bottom-color: $color-primary;
+    }
+  }
+}
