@@ -1,0 +1,170 @@
+@use "../../styles/tokens/index.scss" as *;
+
+// ── Wrapper ──────────────────────────────────────────────
+.select {
+    position: relative;
+    display: inline-block;
+    min-inline-size: 200px;
+
+    &--disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    // ── Size modifiers ───────────────────────────────────
+    &--sm .select__trigger {
+        padding: 6px 36px 6px 12px;
+        font-size: 12px;
+    }
+
+    &--md .select__trigger {
+        padding: 10px 40px 10px 14px;
+        font-size: 14px;
+    }
+
+    &--lg .select__trigger {
+        padding: 14px 44px 14px 16px;
+        font-size: 16px;
+    }
+
+    // ── Variant modifiers ────────────────────────────────
+    &--filled .select__trigger {
+        background-color: $color-neutral-100;
+        border-color: $color-neutral-100;
+    }
+
+    &--subtle .select__trigger {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    // ── Error modifier ───────────────────────────────────
+    &--error .select__trigger {
+        border-color: $color-danger;
+    }
+
+    &--error .select__trigger:focus,
+    &--error.select--open .select__trigger {
+        box-shadow: 0 0 0 3px rgb(236 81 88 / 12%);
+    }
+
+    // ── Open state ───────────────────────────────────────
+    &--open .select__trigger {
+        border-color: $color-primary;
+        box-shadow: 0 0 0 3px rgb(37 99 235 / 10%);
+    }
+
+    &--open .select__chevron {
+        transform: translateY(-25%) rotate(225deg);
+    }
+}
+
+// ── Trigger button ───────────────────────────────────────
+.select__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    inline-size: 100%;
+    padding: 10px 40px 10px 14px;
+    border: 1px solid $color-secondary;
+    border-radius: $radius-md;
+    background-color: $color-white;
+    color: $color-neutral-900;
+    font-size: 14px;
+    font-family: inherit;
+    text-align: start;
+    cursor: pointer;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+    position: relative;
+
+    &:hover {
+        border-color: $color-primary;
+    }
+
+    &:focus-visible {
+        outline: none;
+        border-color: $color-primary;
+        box-shadow: 0 0 0 3px rgb(37 99 235 / 10%);
+    }
+}
+
+// ── Selected value / placeholder ─────────────────────────
+.select__value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.select__value--placeholder {
+    color: $color-secondary-text;
+}
+
+// ── Chevron ──────────────────────────────────────────────
+.select__chevron {
+    position: absolute;
+    inset-inline-end: 14px;
+    inset-block-start: 50%;
+    inline-size: 7px;
+    block-size: 7px;
+    border-inline-end: 2px solid $color-secondary-text;
+    border-block-end: 2px solid $color-secondary-text;
+    transform: translateY(-50%) rotate(45deg);
+    transition: transform 200ms ease;
+    pointer-events: none;
+}
+
+// ── Dropdown menu ────────────────────────────────────────
+.select__menu {
+    position: absolute;
+    inset-inline: 0;
+    inset-block-start: calc(100% + 4px);
+    z-index: 100;
+    list-style: none;
+    margin: 0;
+    padding: 4px 0;
+    background-color: $color-white;
+    border: 1px solid $color-secondary;
+    border-radius: $radius-md;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 8%);
+    max-block-size: 260px;
+    overflow-y: auto;
+}
+
+// ── Option item ──────────────────────────────────────────
+.select__option {
+    padding: 10px 14px;
+    font-size: 14px;
+    color: $color-neutral-900;
+    cursor: pointer;
+    transition: background-color 120ms ease;
+
+    &:hover {
+        background-color: $color-neutral-100;
+    }
+
+    &--selected {
+        background-color: rgb(37 99 235 / 6%);
+        font-weight: 500;
+    }
+
+    &--disabled {
+        color: $color-secondary-text;
+        opacity: 0.5;
+        cursor: not-allowed;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+// ── Helper / error message ───────────────────────────────
+.select__message {
+    margin-block-start: 6px;
+    font-size: 12px;
+    color: $color-secondary-text;
+}
+
+.select__message--error {
+    color: $color-danger;
+}

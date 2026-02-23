@@ -1,0 +1,64 @@
+@use "../../styles/tokens/index.scss" as *;
+
+// ── Single checkbox ──────────────────────────────────────
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+  color: $color-neutral-900;
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+// ── Hide native input ────────────────────────────────────
+.checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+// ── Custom box ───────────────────────────────────────────
+.checkbox__box {
+  position: relative;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $color-secondary;
+  border-radius: $radius-sm;
+  background-color: $color-white;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+// ── Checked state ────────────────────────────────────────
+.checkbox--checked .checkbox__box {
+  background-color: $color-primary;
+  border-color: $color-primary;
+}
+
+// ── Checkmark icon ───────────────────────────────────────
+.checkbox__check {
+  width: 12px;
+  height: 10px;
+  color: $color-white;
+}
+
+// ── Focus ring ───────────────────────────────────────────
+.checkbox__input:focus-visible + .checkbox__box {
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 12%);
+}
+
+// ── Label text ───────────────────────────────────────────
+.checkbox__label {
+  line-height: 1;
+}

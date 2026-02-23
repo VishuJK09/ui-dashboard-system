@@ -1,0 +1,71 @@
+@use "../../styles/tokens/index.scss" as *;
+
+.card {
+  background-color: $color-white;
+  border-radius: $radius-md;
+  border: 1px solid $color-secondary;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgb(17 24 39 / 10%);
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    border-bottom: 1px solid $color-secondary;
+    gap: 16px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__header--left {
+    flex: 1;
+  }
+
+  &__header--right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: $color-neutral-900;
+    line-height: 28px;
+  }
+
+  &__description {
+    margin: 8px 0 0 0;
+    font-size: 14px;
+    color: $color-secondary-text;
+    line-height: 20px;
+  }
+
+  &__content {
+    padding: 24px;
+    min-height: 200px;
+    background-color: $color-neutral-100;
+  }
+
+  &__no-data {
+    margin: 0;
+    padding: 60px 24px;
+    text-align: center;
+    color: $color-secondary-text;
+    font-size: 14px;
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Button.scss";
 
-type Variant = "primary" | "secondary" | "danger" | "success" | "warning" | "outline-primary" | "outline-secondary" | "outline-danger" | "outline-success" | "outline-warning";
+type Variant = "primary" | "secondary" | "danger" | "success" | "warning" | "outline-primary" | "outline-secondary" | "outline-danger" | "outline-success" | "outline-warning" | "loading" | "neutral";
 type Size = "sm" | "md" | "lg";
 
 interface ButtonProps {

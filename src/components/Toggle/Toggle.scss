@@ -1,0 +1,137 @@
+@use "../../styles/tokens/index.scss" as *;
+
+// ── Wrapper ──────────────────────────────────────────────
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  user-select: none;
+  flex-wrap: wrap;
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+// ── Toggle container ────────────────────────────────────
+.toggle {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+}
+
+// ── Hide native input ────────────────────────────────────
+.toggle__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+// ── Track ───────────────────────────────────────────────
+.toggle__track {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: $color-secondary;
+  border-radius: 9999px;
+  transition: background-color 200ms ease;
+}
+
+// ── Thumb ───────────────────────────────────────────────
+.toggle__thumb {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+  background-color: $color-white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+  transition: left 300ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 150ms ease;
+}
+
+// ── Size modifiers ──────────────────────────────────────
+.toggle--sm {
+  width: 36px;
+  height: 20px;
+
+  .toggle__track {
+    width: 36px;
+    height: 20px;
+  }
+
+  .toggle__thumb {
+    width: 16px;
+    height: 16px;
+  }
+
+  &.toggle--checked .toggle__thumb {
+    left: calc(100% - 18px);
+  }
+}
+
+.toggle--md {
+  width: 44px;
+  height: 24px;
+
+  .toggle__track {
+    width: 44px;
+    height: 24px;
+  }
+
+  .toggle__thumb {
+    width: 20px;
+    height: 20px;
+  }
+
+  &.toggle--checked .toggle__thumb {
+    left: calc(100% - 22px);
+  }
+}
+
+.toggle--lg {
+  width: 56px;
+  height: 32px;
+
+  .toggle__track {
+    width: 56px;
+    height: 32px;
+  }
+
+  .toggle__thumb {
+    width: 28px;
+    height: 28px;
+  }
+
+  &.toggle--checked .toggle__thumb {
+    left: calc(100% - 30px);
+  }
+}
+
+// ── Checked state ────────────────────────────────────────
+.toggle--checked {
+  .toggle__track {
+    background-color: $color-primary;
+  }
+}
+
+// ── Focus ring ───────────────────────────────────────────
+.toggle__input:focus-visible + .toggle__track {
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 12%);
+}
+
+// ── Label text ───────────────────────────────────────────
+.toggle__label {
+  font-size: 14px;
+  color: $color-neutral-900;
+  line-height: 1.5;
+  white-space: nowrap;
+}
