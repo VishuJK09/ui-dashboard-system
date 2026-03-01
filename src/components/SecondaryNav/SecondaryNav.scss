@@ -2,7 +2,7 @@
 
 .secondary-nav {
   border-bottom: 1px solid $color-secondary;
-  background-color: $color-neutral-100;
+  background-color: $color-white;
   padding: 0 $space-5;
 
   .secondary-nav-menu {
@@ -32,7 +32,7 @@
 
     &:hover {
       color: $color-primary;
-      background-color: rgba(37, 99, 235, 0.05);
+      background-color: $surface-accent-hover;
     }
 
     &.active {

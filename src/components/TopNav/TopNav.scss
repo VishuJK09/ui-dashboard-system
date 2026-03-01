@@ -1,26 +1,28 @@
 @use "../../styles/tokens/index.scss" as *;
 
 .top-nav {
-  background-color: $color-white;
-  border-bottom: 1px solid $color-secondary;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: $space-3 $space-4;
+  background-color: $surface-page;
 
   .top-nav-container {
-    max-width: 100%;
+    max-width: 1180px;
     margin: 0 auto;
-    padding: 0 $space-5;
+    padding: 0 $space-4;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    height: 60px;
+    height: 64px;
+    border: 1px solid $border-default;
+    border-radius: $radius-xlg;
+    background-color: $surface-default;
   }
 
   .top-nav-logo {
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.125rem;
+    font-weight: 600;
     color: $color-primary;
     text-decoration: none;
     margin-right: $space-5;
@@ -49,30 +51,19 @@
     text-decoration: none;
     font-weight: 500;
     font-size: 0.9375rem;
-    padding: $space-3 $space-4;
-    border-radius: $radius-md;
+    padding: 10px 16px;
+    border-radius: $radius-xlg;
     transition: all 0.2s ease;
     display: inline-block;
-    position: relative;
 
     &:hover {
       color: $color-primary;
-      background-color: $color-neutral-100;
+      background-color: $surface-accent-hover;
     }
 
     &.active {
       color: $color-primary;
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -11px;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background-color: $color-primary;
-        border-radius: $radius-sm $radius-sm 0 0;
-      }
+      background-color: $surface-accent;
     }
   }
 }

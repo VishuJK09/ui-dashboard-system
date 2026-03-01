@@ -1,7 +1,7 @@
 import "./Sidebar.scss";
 
 export interface SidebarProps {
-  items: { label: string; id: string }[];
+  items: { label: string; id: string; icon?: string; tone?: string }[];
   activeItem: string;
   onItemClick: (id: string) => void;
 }
@@ -9,9 +9,6 @@ export interface SidebarProps {
 function Sidebar({ items, activeItem, onItemClick }: SidebarProps) {
   return (
     <aside className="sidebar">
-      <div className="sidebar-header">
-        <h2>Components</h2>
-      </div>
       <nav className="sidebar-nav">
         <ul className="sidebar-menu">
           {items.map((item) => (
@@ -20,7 +17,7 @@ function Sidebar({ items, activeItem, onItemClick }: SidebarProps) {
                 className={`sidebar-link ${activeItem === item.id ? "active" : ""}`}
                 onClick={() => onItemClick(item.id)}
               >
-                {item.label}
+                <span className="sidebar-link-text">{item.label}</span>
               </button>
             </li>
           ))}

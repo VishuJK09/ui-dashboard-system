@@ -1,36 +1,23 @@
 @use "../../styles/tokens/index.scss" as *;
-@use "sass:color";
 
 .sidebar {
-  width: 250px;
-  height: calc(100vh - 60px);
-  background-color: $color-white;
-  border-right: 1px solid $color-secondary;
+  width: 272px;
+  height: calc(100vh - 88px);
+  background-color: $surface-page;
+  border: 1px solid $border-subtle;
+  border-radius: 28px;
   padding: 0;
   display: flex;
   flex-direction: column;
   position: fixed;
-  left: 0;
-  top: 60px;
+  left: 24px;
+  top: 88px;
   overflow-y: auto;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-
-  .sidebar-header {
-    padding: $space-5 $space-4;
-    border-bottom: 1px solid $color-secondary;
-    background-color: $color-neutral-100;
-
-    h2 {
-      margin: 0;
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: $color-neutral-900;
-    }
-  }
+  box-shadow: none;
 
   .sidebar-nav {
     flex: 1;
-    padding: $space-4 0;
+    padding: $space-4 $space-3;
   }
 
   .sidebar-menu {
@@ -47,36 +34,64 @@
   .sidebar-link {
     width: 100%;
     text-align: left;
-    padding: $space-3 $space-4;
+    padding: $space-2 $space-3;
     border: none;
     background-color: transparent;
-    color: $color-neutral-900;
+    color: $text-primary;
     cursor: pointer;
-    font-size: 0.9375rem;
+    font-size: 1.05rem;
     font-weight: 500;
     transition: all 0.2s ease;
+    border-radius: $radius-xlg;
+    margin: 2px 0;
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    min-height: 44px;
 
     &:hover {
-      background-color: $color-neutral-100;
-      color: $color-primary;
+      background-color: $surface-muted;
     }
 
     &.active {
-      background-color: $color-primary;
-      color: $color-white;
-      border-left: 4px solid $color-primary;
-      padding-left: calc($space-4 - 4px);
+      background-color: #edf0f3;
+      color: $text-primary;
+      font-weight: 500;
     }
+  }
+
+  .sidebar-link-icon {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    line-height: 1;
+    font-weight: 600;
+    flex: 0 0 28px;
+    color: $text-secondary;
+  }
+
+  .sidebar-link-text {
+    line-height: 1.25;
+    white-space: normal;
   }
 }
 
 // Responsive adjustment for mobile
 @media (max-width: 768px) {
   .sidebar {
-    width: 200px;
+    width: 224px;
+    left: $space-4;
 
     .sidebar-link {
-      padding: $space-3 $space-3;
+      font-size: 0.95rem;
+    }
+
+    .sidebar-link {
+      min-height: 40px;
+      font-size: 0.95rem;
     }
   }
 }

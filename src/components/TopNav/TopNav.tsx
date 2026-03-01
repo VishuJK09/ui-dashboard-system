@@ -4,21 +4,29 @@ import "./TopNav.scss";
 function TopNav() {
   const location = useLocation();
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => {
+    if (path === "/") return location.pathname === "/";
+    return location.pathname === path || location.pathname.startsWith(`${path}/`);
+  };
 
   return (
     <nav className="top-nav">
       <div className="top-nav-container">
-        <Link to="/" className="top-nav-logo">
-          Dashboard
-        </Link>
         <ul className="top-nav-menu">
           <li>
             <Link
               to="/"
               className={`top-nav-link ${isActive("/") ? "active" : ""}`}
             >
-              Home
+              Assistant
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/settings"
+              className={`top-nav-link ${isActive("/settings") ? "active" : ""}`}
+            >
+              Settings
             </Link>
           </li>
           <li>
@@ -26,7 +34,7 @@ function TopNav() {
               to="/components"
               className={`top-nav-link ${isActive("/components") ? "active" : ""}`}
             >
-              Components
+              UI Kit
             </Link>
           </li>
         </ul>

@@ -48,8 +48,9 @@ function ComponentsPage() {
       case "select":
         return <SelectShowcase />;
       case "checkbox":
+        return <RadioCheckboxShowcase section="checkbox" />;
       case "radio":
-        return <RadioCheckboxShowcase />;
+        return <RadioCheckboxShowcase section="radio" />;
       case "card":
         return <CardShowcase />;
       case "toggle":

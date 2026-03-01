@@ -3,6 +3,10 @@ import Layout from "../components/Layout/Layout";
 import RadioButton from "../components/RadioButton";
 import Checkbox from "../components/Checkbox";
 
+interface RadioCheckboxShowcaseProps {
+  section?: "radio" | "checkbox" | "both";
+}
+
 const radioCodeSample = `
 <RadioButton
   name="demo"
@@ -55,7 +59,9 @@ const radioBlockOptions = [
   { label: "Disabled", value: "disabled", disabled: true },
 ];
 
-const RadioCheckboxShowcase: React.FC = () => {
+const RadioCheckboxShowcase: React.FC<RadioCheckboxShowcaseProps> = ({
+  section = "both",
+}) => {
   const [radioH, setRadioH] = React.useState("inline1");
   const [radioV, setRadioV] = React.useState("");
 
@@ -75,94 +81,102 @@ const RadioCheckboxShowcase: React.FC = () => {
   return (
     <Layout>
       {/* ── Radio Button ──────────────────────────────── */}
-      <div>
-        <h2>Radio Button</h2>
-      </div>
+      {(section === "both" || section === "radio") && (
+        <>
+          <div>
+            <h2>Radio Button</h2>
+          </div>
 
-      <div>
-        <h4>Horizontal Align</h4>
-        <div style={{ marginTop: 12 }}>
-          <RadioButton
-            name="radio-h"
-            options={radioOptions}
-            value={radioH}
-            onChange={setRadioH}
-            direction="horizontal"
-          />
-        </div>
-      </div>
+          <div>
+            <h4>Horizontal Align</h4>
+            <div style={{ marginTop: 12 }}>
+              <RadioButton
+                name="radio-h"
+                options={radioOptions}
+                value={radioH}
+                onChange={setRadioH}
+                direction="horizontal"
+              />
+            </div>
+          </div>
 
-      <div>
-        <h4>Vertical Align</h4>
-        <div style={{ marginTop: 12 }}>
-          <RadioButton
-            name="radio-v"
-            options={radioBlockOptions}
-            value={radioV}
-            onChange={setRadioV}
-            direction="vertical"
-          />
-        </div>
-      </div>
+          <div>
+            <h4>Vertical Align</h4>
+            <div style={{ marginTop: 12 }}>
+              <RadioButton
+                name="radio-v"
+                options={radioBlockOptions}
+                value={radioV}
+                onChange={setRadioV}
+                direction="vertical"
+              />
+            </div>
+          </div>
 
-      <div>
-        <h4>Code</h4>
-        <pre className="code-block">
-          <code>{radioCodeSample}</code>
-        </pre>
-      </div>
+          <div>
+            <h4>Code</h4>
+            <pre className="code-block">
+              <code>{radioCodeSample}</code>
+            </pre>
+          </div>
+        </>
+      )}
 
       {/* ── Checkbox ──────────────────────────────────── */}
-      <div>
-        <h2>Checkbox</h2>
-      </div>
+      {(section === "both" || section === "checkbox") && (
+        <>
+          <div>
+            <h2>Checkbox</h2>
+          </div>
 
-      <div>
-        <h4>Horizontal Align</h4>
-        <div style={{ display: "flex", gap: 28, marginTop: 12 }}>
-          {radioOptions.map((opt) => (
-            <Checkbox
-              key={opt.value}
-              label={opt.label}
-              checked={checkH[opt.value]}
-              onChange={(checked) =>
-                setCheckH((prev) => ({ ...prev, [opt.value]: checked }))
-              }
-            />
-          ))}
-        </div>
-      </div>
+          <div>
+            <h4>Horizontal Align</h4>
+            <div style={{ display: "flex", gap: 28, marginTop: 12 }}>
+              {radioOptions.map((opt) => (
+                <Checkbox
+                  key={opt.value}
+                  label={opt.label}
+                  checked={checkH[opt.value]}
+                  onChange={(checked) =>
+                    setCheckH((prev) => ({ ...prev, [opt.value]: checked }))
+                  }
+                />
+              ))}
+            </div>
+          </div>
 
-      <div>
-        <h4>Vertical Align</h4>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 12,
-            marginTop: 12,
-          }}
-        >
-          {radioBlockOptions.map((opt) => (
-            <Checkbox
-              key={opt.value}
-              label={opt.label}
-              disabled={opt.disabled}
-              checked={checkV[opt.value]}
-              onChange={(checked) =>
-                setCheckV((prev) => ({ ...prev, [opt.value]: checked }))
-              }
-            />
-          ))}
-        </div>
-      </div>
+          <div>
+            <h4>Vertical Align</h4>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 12,
+                marginTop: 12,
+              }}
+            >
+              {radioBlockOptions.map((opt) => (
+                <Checkbox
+                  key={opt.value}
+                  label={opt.label}
+                  disabled={opt.disabled}
+                  checked={checkV[opt.value]}
+                  onChange={(checked) =>
+                    setCheckV((prev) => ({ ...prev, [opt.value]: checked }))
+                  }
+                />
+              ))}
+            </div>
+          </div>
 
-      <div>
-        <h4>Code</h4>
-        <pre className="code-block">
-          <code>{checkboxCodeSample}</code>
-        </pre>
-      </div>
+          <div>
+            <h4>Code</h4>
+            <pre className="code-block">
+              <code>{checkboxCodeSample}</code>
+            </pre>
+          </div>
+        </>
+      )}
     </Layout>
   );
 };

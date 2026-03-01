@@ -4,31 +4,37 @@
 .btn {
   padding: 10px 16px;
   border: none;
-  border-radius: $radius-sm;
+  border-radius: $radius-xlg;
   cursor: pointer;
   font-weight: 500;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: $focus-ring-primary;
+  }
   &+.btn {
     margin-left: 12px;
   }
   &--primary {
     background-color: $color-primary;
-    color: white;
+    color: $color-white;
     &:hover {
       background-color: $color-primary-hover;
     }
   }
   
   &--secondary {
-    background-color: $color-secondary;
-    color: $color-secondary-text;
+    background-color: $surface-accent-hover;
+    color: $color-primary;
     &:hover {
-      background-color: color.adjust($color-secondary, $lightness: -5%);
+      background-color: $surface-accent;
     }
   }
 
   &--danger {
     background-color: $color-danger;
-    color: white;
+    color: $color-white;
     &:hover {
       background-color: color.adjust($color-danger, $lightness: -5%);
     }
@@ -36,7 +42,7 @@
 
   &--success {
     background-color: $color-success;
-    color: white;
+    color: $color-white;
     &:hover {
       background-color: color.adjust($color-success, $lightness: -5%);
     }
@@ -44,7 +50,7 @@
 
   &--warning {
     background-color: $color-warning;
-    color: white;
+    color: $color-white;
     &:hover {
       background-color: color.adjust($color-warning, $lightness: -5%);
     }
@@ -61,7 +67,7 @@
     border: 1px solid $outline-color;
     color: $outline-primary-text;
     &:hover {
-      background-color: $outline-primary-hover-color;
+      background-color: $surface-accent;
     }
   }
 
@@ -70,7 +76,7 @@
     border: 1px solid $outline-secondary-color;
     color: $outline-secondary-text;
     &:hover {
-      background-color: $outline-secondary-hover-color;
+      background-color: $surface-muted;
     }
   }
 
@@ -87,17 +93,17 @@
   }
   
   &--sm {
-    padding: 6px 12px;
+    padding: 8px 14px;
     font-size: 12px;
   }
   
   &--md {
-    padding: 10px 16px;
+    padding: 10px 18px;
     font-size: 14px;
   }
   
   &--lg {
-    padding: 14px 20px;
+    padding: 12px 22px;
     font-size: 16px;
   }
   
@@ -106,5 +112,3 @@
     cursor: not-allowed;
   }
 }
-
-

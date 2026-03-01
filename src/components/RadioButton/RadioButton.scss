@@ -72,7 +72,7 @@
 
 // ── Focus ring ───────────────────────────────────────────
 .radio__input:focus-visible + .radio__circle {
-  box-shadow: 0 0 0 3px rgb(37 99 235 / 12%);
+  box-shadow: $focus-ring-primary;
 }
 
 // ── Label text ───────────────────────────────────────────

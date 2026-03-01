@@ -2,10 +2,10 @@
 
 .card {
   background-color: $color-white;
-  border-radius: $radius-md;
+  border-radius: 24px;
   border: 1px solid $color-secondary;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgb(17 24 39 / 10%);
+  box-shadow: $shadow-soft;
 
   &--full-width {
     width: 100%;
@@ -15,7 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px;
+    padding: 20px 24px;
     border-bottom: 1px solid $color-secondary;
     gap: 16px;
 
@@ -42,8 +42,8 @@
 
   &__title {
     margin: 0;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 500;
     color: $color-neutral-900;
     line-height: 28px;
   }
@@ -56,9 +56,9 @@
   }
 
   &__content {
-    padding: 24px;
+    padding: 20px 24px 24px;
     min-height: 200px;
-    background-color: $color-neutral-100;
+    background-color: $color-white;
   }
 
   &__no-data {

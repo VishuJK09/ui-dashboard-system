@@ -1,23 +1,71 @@
-$color-primary: #2563eb;
-$color-primary-hover: #1d4ed8;
+// Primitive tokens
+$blue-700: #0842a0;
+$blue-600: #0b57d0;
+$blue-100: #e8f0fe;
+$blue-050: #eef3fd;
 
-$color-secondary: #e5e7eb;
-$color-secondary-text: #666666;
+$neutral-1000: #1f1f1f;
+$neutral-700: #444746;
+$neutral-300: #dde3ea;
+$neutral-200: #e8eaed;
+$neutral-100: #f8fafd;
+$neutral-050: #f8fbff;
+$neutral-000: #ffffff;
 
-$color-neutral-100: #f3f4f6;
-$color-neutral-900: #111827;
+$red-600: #d93025;
+$green-700: #188038;
+$orange-700: #ea8600;
 
-$color-success: #0EBC6B;
-$color-danger: #EC5158;
-$color-warning: #F1A82F;
+// Semantic tokens (industry-standard naming)
+$brand-primary: $blue-600;
+$brand-primary-hover: $blue-700;
 
-$color-white: #ffffff;
+$surface-page: $neutral-000;
+$surface-default: $neutral-000;
+$surface-muted: $neutral-100;
+$surface-subtle: $neutral-050;
+$surface-accent: $blue-100;
+$surface-accent-hover: $blue-050;
+
+$text-primary: $neutral-1000;
+$text-secondary: $neutral-700;
+$text-inverse: $neutral-000;
+$text-brand: $brand-primary;
+
+$border-default: $neutral-300;
+$border-subtle: $neutral-200;
+
+$state-success: $green-700;
+$state-danger: $red-600;
+$state-warning: $orange-700;
+
+$shadow-1: 0 1px 2px rgb(60 64 67 / 12%);
+$shadow-2: 0 1px 3px rgb(60 64 67 / 16%);
+$shadow-3: 0 8px 20px rgb(60 64 67 / 14%);
+
+$focus-ring-brand: 0 0 0 3px rgb(11 87 208 / 20%);
+$focus-ring-danger: 0 0 0 3px rgb(217 48 37 / 18%);
+
+// Backward-compatible aliases
+$color-primary: $brand-primary;
+$color-primary-hover: $brand-primary-hover;
+$color-secondary: $border-default;
+$color-secondary-text: $text-secondary;
+$color-neutral-100: $surface-muted;
+$color-neutral-900: $text-primary;
+$color-success: $state-success;
+$color-danger: $state-danger;
+$color-warning: $state-warning;
+$color-white: $surface-default;
 $color-black: #000000;
+$shadow-subtle: $shadow-1;
+$shadow-soft: $shadow-2;
+$shadow-float: $shadow-3;
+$focus-ring-primary: $focus-ring-brand;
 
-
-$outline-color: $color-primary;
-$outline-primary-hover-color: rgb(101 139 255 / 8%);
-$outline-primary-text: $color-primary;
-$outline-secondary-color: $color-secondary;
-$outline-secondary-hover-color: rgb(222 225 230 / 18%);
-$outline-secondary-text: $color-secondary-text;
+$outline-color: $brand-primary;
+$outline-primary-hover-color: rgb(11 87 208 / 10%);
+$outline-primary-text: $text-brand;
+$outline-secondary-color: $border-default;
+$outline-secondary-hover-color: rgb(60 64 67 / 10%);
+$outline-secondary-text: $text-secondary;

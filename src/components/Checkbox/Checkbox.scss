@@ -55,7 +55,7 @@
 
 // ── Focus ring ───────────────────────────────────────────
 .checkbox__input:focus-visible + .checkbox__box {
-  box-shadow: 0 0 0 3px rgb(37 99 235 / 12%);
+  box-shadow: $focus-ring-primary;
 }
 
 // ── Label text ───────────────────────────────────────────

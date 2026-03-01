@@ -30,8 +30,8 @@ const ToggleShowcase: React.FC = () => {
             style={{
               marginTop: "12px",
               padding: "24px",
-              backgroundColor: "#f9fafb",
-              border: "1px solid #e5e7eb",
+              backgroundColor: "var(--surface-muted)",
+              border: "1px solid var(--border-default)",
               borderRadius: "8px",
             }}
           >
@@ -40,7 +40,7 @@ const ToggleShowcase: React.FC = () => {
               checked={basicToggle}
               onChange={setBasicToggle}
             />
-            <p style={{ marginTop: "12px", fontSize: "14px", color: "#6b7280" }}>
+            <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--text-secondary)" }}>
               State: <strong>{basicToggle ? "ON" : "OFF"}</strong>
             </p>
           </div>
@@ -53,8 +53,8 @@ const ToggleShowcase: React.FC = () => {
             style={{
               marginTop: "12px",
               padding: "24px",
-              backgroundColor: "#f9fafb",
-              border: "1px solid #e5e7eb",
+              backgroundColor: "var(--surface-muted)",
+              border: "1px solid var(--border-default)",
               borderRadius: "8px",
             }}
           >
@@ -82,8 +82,8 @@ const ToggleShowcase: React.FC = () => {
             style={{
               marginTop: "12px",
               padding: "24px",
-              backgroundColor: "#f9fafb",
-              border: "1px solid #e5e7eb",
+              backgroundColor: "var(--surface-muted)",
+              border: "1px solid var(--border-default)",
               borderRadius: "8px",
             }}
           >
@@ -98,7 +98,7 @@ const ToggleShowcase: React.FC = () => {
               >
                 <div>
                   <p style={{ fontWeight: "500", marginBottom: "4px" }}>Enable Notifications</p>
-                  <p style={{ fontSize: "14px", color: "#6b7280" }}>
+                  <p style={{ fontSize: "14px", color: "var(--text-secondary)" }}>
                     Receive email notifications
                   </p>
                 </div>
@@ -109,7 +109,7 @@ const ToggleShowcase: React.FC = () => {
               </div>
               <div
                 style={{
-                  borderTop: "1px solid #e5e7eb",
+                  borderTop: "1px solid var(--border-default)",
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
@@ -118,7 +118,7 @@ const ToggleShowcase: React.FC = () => {
               >
                 <div>
                   <p style={{ fontWeight: "500", marginBottom: "4px" }}>Dark Mode</p>
-                  <p style={{ fontSize: "14px", color: "#6b7280" }}>
+                  <p style={{ fontSize: "14px", color: "var(--text-secondary)" }}>
                     Use dark theme for the app
                   </p>
                 </div>
@@ -126,7 +126,7 @@ const ToggleShowcase: React.FC = () => {
               </div>
               <div
                 style={{
-                  borderTop: "1px solid #e5e7eb",
+                  borderTop: "1px solid var(--border-default)",
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
@@ -135,7 +135,7 @@ const ToggleShowcase: React.FC = () => {
               >
                 <div>
                   <p style={{ fontWeight: "500", marginBottom: "4px" }}>Auto Save</p>
-                  <p style={{ fontSize: "14px", color: "#6b7280" }}>
+                  <p style={{ fontSize: "14px", color: "var(--text-secondary)" }}>
                     Automatically save your progress
                   </p>
                 </div>
@@ -152,8 +152,8 @@ const ToggleShowcase: React.FC = () => {
             style={{
               marginTop: "12px",
               padding: "24px",
-              backgroundColor: "#f9fafb",
-              border: "1px solid #e5e7eb",
+              backgroundColor: "var(--surface-muted)",
+              border: "1px solid var(--border-default)",
               borderRadius: "8px",
             }}
           >
@@ -171,8 +171,8 @@ const ToggleShowcase: React.FC = () => {
             style={{
               marginTop: "12px",
               padding: "24px",
-              backgroundColor: "#f9fafb",
-              border: "1px solid #e5e7eb",
+              backgroundColor: "var(--surface-muted)",
+              border: "1px solid var(--border-default)",
               borderRadius: "8px",
             }}
           >
@@ -185,7 +185,7 @@ const ToggleShowcase: React.FC = () => {
               style={{
                 marginTop: "16px",
                 padding: "12px",
-                backgroundColor: "#f3f4f6",
+                backgroundColor: "var(--surface-subtle)",
                 borderRadius: "4px",
                 fontSize: "14px",
               }}
@@ -193,7 +193,7 @@ const ToggleShowcase: React.FC = () => {
               <p>
                 Current state: <strong>{controlledToggle ? "ON" : "OFF"}</strong>
               </p>
-              <p style={{ marginTop: "8px", color: "#6b7280" }}>
+              <p style={{ marginTop: "8px", color: "var(--text-secondary)" }}>
                 This toggle is fully controlled by React state. You can track and manipulate
                 its state programmatically.
               </p>

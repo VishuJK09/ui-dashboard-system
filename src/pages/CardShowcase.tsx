@@ -157,7 +157,7 @@ const CardShowcase = () => {
                   style={{
                     width: "100%",
                     padding: "10px 14px",
-                    border: "1px solid #e5e7eb",
+                    border: "1px solid var(--border-default)",
                     borderRadius: "8px",
                     fontSize: "14px",
                     fontFamily: "inherit",
@@ -177,7 +177,7 @@ const CardShowcase = () => {
                   style={{
                     width: "100%",
                     padding: "10px 14px",
-                    border: "1px solid #e5e7eb",
+                    border: "1px solid var(--border-default)",
                     borderRadius: "8px",
                     fontSize: "14px",
                     fontFamily: "inherit",
@@ -211,10 +211,10 @@ const CardShowcase = () => {
           style={{
             marginTop: "24px",
             padding: "12px 16px",
-            backgroundColor: "#d4edda",
-            color: "#155724",
+            backgroundColor: "var(--state-success-bg)",
+            color: "var(--state-success)",
             borderRadius: "4px",
-            border: "1px solid #c3e6cb",
+            border: "1px solid var(--state-success-border)",
           }}
         >
           {saveMessage}
