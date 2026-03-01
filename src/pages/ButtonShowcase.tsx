@@ -10,6 +10,7 @@ const codeSample = `
 <Button variant="outline-secondary">Secondary</Button>
 <Button disabled>Disabled</Button>
 <Button variant="secondary" size="md" disabled>Disabled Secondary</Button>
+<Button aria-label="Accessible Button Example">Has ARIA Label</Button>
 `;
 
 const ButtonShowcase = () => {
@@ -43,6 +44,13 @@ const ButtonShowcase = () => {
           <Button variant="secondary" size="md" disabled>
             Disabled Secondary
           </Button>
+        </div>
+      </div>
+
+      <div>
+        <h4>Accessibility (a11y)</h4>
+        <div style={{ display: "flex", gap: "16px", marginTop: "12px" }}>
+          <Button aria-label="Accessible Button Example">Has ARIA Label</Button>
         </div>
       </div>
 

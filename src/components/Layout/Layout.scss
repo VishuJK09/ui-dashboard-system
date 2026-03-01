@@ -1,6 +1,8 @@
+@use "../../styles/tokens/index.scss" as *;
+
 .layout {
-  padding: 8px;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: $space-5;
 }

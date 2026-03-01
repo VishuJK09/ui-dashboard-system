@@ -1,19 +1,13 @@
 @use "../../styles/tokens/index.scss" as *;
 
 .sidebar {
-  width: 272px;
-  height: calc(100vh - 88px);
-  background-color: $surface-page;
-  border: 1px solid $border-subtle;
-  border-radius: 28px;
-  padding: 0;
+  border: 1px solid $border-default;
+  border-radius: 20px;
+  background-color: $surface-default;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  position: fixed;
-  left: 24px;
-  top: 88px;
-  overflow-y: auto;
-  box-shadow: none;
+  min-height: 620px;
 
   .sidebar-nav {
     flex: 1;
@@ -54,7 +48,7 @@
     }
 
     &.active {
-      background-color: #edf0f3;
+      background-color: $surface-accent;
       color: $text-primary;
       font-weight: 500;
     }
@@ -80,18 +74,13 @@
 }
 
 // Responsive adjustment for mobile
-@media (max-width: 768px) {
+@media (max-width: 980px) {
   .sidebar {
-    width: 224px;
-    left: $space-4;
+    min-height: 260px;
 
     .sidebar-link {
       font-size: 0.95rem;
-    }
-
-    .sidebar-link {
       min-height: 40px;
-      font-size: 0.95rem;
     }
   }
 }
