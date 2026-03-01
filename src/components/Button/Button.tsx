@@ -4,26 +4,26 @@ import "./Button.scss";
 type Variant = "primary" | "secondary" | "danger" | "success" | "warning" | "outline-primary" | "outline-secondary" | "outline-danger" | "outline-success" | "outline-warning" | "loading" | "neutral";
 type Size = "sm" | "md" | "lg";
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;
   size?: Size;
   children: React.ReactNode;
-  onClick?: () => void;
-  disabled?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
   variant = "primary",
   size = "md",
   children,
-  onClick,
+  className = "",
   disabled = false,
+  ...props
 }) => {
   return (
     <button
-      className={`btn btn--${variant} btn--${size}`}
-      onClick={onClick}
+      className={`btn btn--${variant} btn--${size} ${className}`.trim()}
       disabled={disabled}
+      aria-disabled={disabled}
+      {...props}
     >
       {children}
     </button>

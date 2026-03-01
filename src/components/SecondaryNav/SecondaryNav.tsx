@@ -11,13 +11,14 @@ function SecondaryNav({ items }: SecondaryNavProps) {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="secondary-nav">
+    <nav className="secondary-nav" aria-label="Secondary Navigation">
       <ul className="secondary-nav-menu">
         {items.map((item) => (
           <li key={item.path}>
             <Link
               to={item.path}
               className={`secondary-nav-link ${isActive(item.path) ? "active" : ""}`}
+              aria-current={isActive(item.path) ? "page" : undefined}
             >
               {item.label}
             </Link>

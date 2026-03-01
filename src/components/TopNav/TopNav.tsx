@@ -10,13 +10,14 @@ function TopNav() {
   };
 
   return (
-    <nav className="top-nav">
+    <nav className="top-nav" aria-label="Primary Navigation">
       <div className="top-nav-container">
         <ul className="top-nav-menu">
           <li>
             <Link
               to="/"
               className={`top-nav-link ${isActive("/") ? "active" : ""}`}
+              aria-current={isActive("/") ? "page" : undefined}
             >
               Assistant
             </Link>
@@ -25,6 +26,7 @@ function TopNav() {
             <Link
               to="/settings"
               className={`top-nav-link ${isActive("/settings") ? "active" : ""}`}
+              aria-current={isActive("/settings") ? "page" : undefined}
             >
               Settings
             </Link>
@@ -33,6 +35,7 @@ function TopNav() {
             <Link
               to="/components"
               className={`top-nav-link ${isActive("/components") ? "active" : ""}`}
+              aria-current={isActive("/components") ? "page" : undefined}
             >
               UI Kit
             </Link>

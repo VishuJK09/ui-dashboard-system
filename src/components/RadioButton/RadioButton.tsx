@@ -41,9 +41,8 @@ const RadioButton: React.FC<RadioButtonProps> = ({
         return (
           <label
             key={option.value}
-            className={`radio${checked ? " radio--checked" : ""}${
-              option.disabled ? " radio--disabled" : ""
-            }`}
+            className={`radio${checked ? " radio--checked" : ""}${option.disabled ? " radio--disabled" : ""
+              }`}
             htmlFor={id}
           >
             <input
@@ -56,7 +55,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
               onChange={() => handleChange(option.value)}
               className="radio__input"
             />
-            <span className="radio__circle" />
+            <span className="radio__circle" aria-hidden="true" />
             <span className="radio__label">{option.label}</span>
           </label>
         );

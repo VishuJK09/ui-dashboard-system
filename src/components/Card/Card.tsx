@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 import Button from "../Button";
 import "./Card.scss";
 
@@ -27,11 +27,13 @@ const Card: React.FC<CardProps> = ({
   cancelDisabled = false,
   fullWidth = false,
 }) => {
+  const titleId = useId();
+
   return (
-    <div className={`card ${fullWidth ? "card--full-width" : ""}`}>
+    <article className={`card ${fullWidth ? "card--full-width" : ""}`} aria-labelledby={titleId}>
       <div className="card__header">
         <div className="card__header--left">
-          <h2 className="card__title">{title}</h2>
+          <h2 id={titleId} className="card__title">{title}</h2>
           {description && (
             <p className="card__description">{description}</p>
           )}
@@ -58,7 +60,7 @@ const Card: React.FC<CardProps> = ({
       <div className="card__content">
         {children ? children : <p className="card__no-data">No data</p>}
       </div>
-    </div>
+    </article>
   );
 };
 

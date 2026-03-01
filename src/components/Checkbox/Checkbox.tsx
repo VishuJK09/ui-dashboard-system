@@ -35,9 +35,8 @@ const Checkbox: React.FC<CheckboxProps> = ({
 
   return (
     <label
-      className={`checkbox${isChecked ? " checkbox--checked" : ""}${
-        disabled ? " checkbox--disabled" : ""
-      }`}
+      className={`checkbox${isChecked ? " checkbox--checked" : ""}${disabled ? " checkbox--disabled" : ""
+        }`}
       htmlFor={id}
     >
       <input
@@ -50,13 +49,14 @@ const Checkbox: React.FC<CheckboxProps> = ({
         onChange={handleChange}
         className="checkbox__input"
       />
-      <span className="checkbox__box">
+      <span className="checkbox__box" aria-hidden="true">
         {isChecked && (
           <svg
             className="checkbox__check"
             viewBox="0 0 12 10"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
           >
             <path
               d="M1 5L4.5 8.5L11 1.5"

@@ -38,13 +38,14 @@ const Toggle: React.FC<ToggleProps> = ({
   return (
     <div className={`toggle-wrapper${disabled ? " toggle-wrapper--disabled" : ""}`}>
       <label
-        className={`toggle toggle--${size}${isChecked ? " toggle--checked" : ""}${
-          disabled ? " toggle--disabled" : ""
-        }`}
+        className={`toggle toggle--${size}${isChecked ? " toggle--checked" : ""}${disabled ? " toggle--disabled" : ""
+          }`}
         htmlFor={id}
       >
         <input
           type="checkbox"
+          role="switch"
+          aria-checked={isChecked}
           id={id}
           name={name}
           value={value}
@@ -53,8 +54,8 @@ const Toggle: React.FC<ToggleProps> = ({
           onChange={handleChange}
           className="toggle__input"
         />
-        <span className="toggle__track" />
-        <span className="toggle__thumb" />
+        <span className="toggle__track" aria-hidden="true" />
+        <span className="toggle__thumb" aria-hidden="true" />
       </label>
       {label && <span className="toggle__label">{label}</span>}
     </div>
